@@ -4,12 +4,11 @@ import 'new_todo_dialog.dart';
 import 'todo_list.dart';
 
 class TodoListScreen extends StatefulWidget{
+  //Arrow notation like JS
   @override
-  State<StatefulWidget> createState() {
-
-    return _TodoListScreenState();
-  }
+  State<StatefulWidget> createState() => _TodoListScreenState();
 }
+
 
 //This will create the state
 //This is the class you can mess with , the other is stays as is
@@ -32,7 +31,14 @@ class _TodoListScreenState extends State<TodoListScreen>{
     builder: (BuildContext context){
       return NewTodoDialog();
     });
+    if (todo != null) {
+      setState((){
+        todos.add(todo);
+      });
+    }
   }
+
+  
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +50,9 @@ class _TodoListScreenState extends State<TodoListScreen>{
     ),
     floatingActionButton: FloatingActionButton(
           child: Icon(Icons.add),
-          onPressed: (_addTodo()),
+          onPressed: (){
+            _addTodo();
+          },
         ),
       );
     }
