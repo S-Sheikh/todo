@@ -5,10 +5,10 @@ import 'package:todo_list/todo.dart';
 typedef ToggleTodoCallback = void Function(Todo, bool);
 
 class TodoList extends StatelessWidget {
-  TodoList({@required this.todos, this.onTodoToggle});
+  TodoList({@required this.todos, this.onTodoCallback});
 
   final List<Todo> todos;
-  final ToggleTodoCallback onTodoToggle;
+  final ToggleTodoCallback onTodoCallback;
 
   Widget _buildItem(BuildContext context, int index) {
     final todo = todos[index];
@@ -17,7 +17,7 @@ class TodoList extends StatelessWidget {
       value: todo.isDone,
       title: Text(todo.title),
       onChanged: (bool isChecked) {
-        onTodoToggle(todo, isChecked);
+        onTodoCallback(todo, isChecked);
       },
     );
   }

@@ -1,5 +1,5 @@
-class Todo {
-  Todo({this.title, this.isDone = false});
+class Todo{
+  Todo({this.title,this.isDone = false});
   String title;
   bool isDone;
 }
