@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1aa079692c342526841de38bb79b497346e0f067
 import 'package:flutter/material.dart';
 
 import 'package:todo_list/todo.dart';
